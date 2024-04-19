@@ -1,0 +1,141 @@
+
+* {
+    base: #1e1e2e;
+    mantle: #181825;
+    crust: #11111b;
+
+    text: #cdd6f4;
+    subtext0: #a6adc8;
+    subtext1: #bac2de;
+
+    surface0-rgba:  rgba(69, 71, 90, 0.75);
+    surface1-rgba:  rgba(88, 91, 112, 1);
+    surface2-rgba:  rgba(57, 65, 97, 1);
+    surface0: #45475a;
+    surface1: #585b70;
+    surface2: #394161;
+
+    overlay0: #6c7086;
+    overlay1: #7f849c;
+    overlay2: #9ba3c3;
+
+    blue: #89b4fa;
+    lavender: #b4befe;
+    sapphire: #74c7ec;
+    sky: #89dceb;
+    teal: #94e2d5;
+    green: #a6e3a1;
+    yellow: #f9e2af;
+    peach: #fab387;
+    maroon: #eba0ac;
+    red: #f38ba8;
+    mauve: #cba6f7;
+    pink: #f5c2e7;
+    flamingo: #f2cdcd;
+    rosewater: #f5e0dc;
+
+    bg-col:  @surface0-rgba;
+    bg-col-light: @surface0-rgba;
+    border-col: @surface0-rgba;
+    selected-col: @surface0-rgba;
+    fg-col: @text;
+    fg-col2: @mauve;
+    grey: @surface0-rgba;
+
+    width: 800;
+    font: "DejaVu Sans 14";
+    background-color: @surface0-rgba;
+}
+
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+window {
+    height: 360px;
+    border: 15px;
+    border-color: @border-col;
+}
+
+mainbox {
+    background-color: @bg-col;
+}
+
+inputbar {
+    children: [prompt,entry];
+    border-radius: 5px;
+    padding: 2px;
+}
+
+prompt {
+    background-color: @sapphire;
+    padding: 6px;
+    text-color: @bg-col;
+    border-radius: 3px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 6px;
+    margin: 0px 0px 0px 0px;
+    text-color: @fg-col;
+    background-color: @bg-col;
+}
+
+listview {
+    border: 0px 0px 0px;
+    padding: 6px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    columns: 2;
+    lines: 5;
+}
+
+element {
+    padding: 5px;
+    text-color: @fg-col  ;
+}
+
+element-icon {
+    size: 25px;
+}
+
+element selected {
+    background-color:  @surface1-rgba;
+    text-color: @mauve;
+}
+
+mode-switcher {
+    spacing: 0;
+  }
+
+button {
+    padding: 10px;
+    background-color: @bg-col-light;
+    text-color: @grey;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+
+button selected {
+  background-color: @bg-col;
+  text-color: @mauve;
+}
+
+message {
+    background-color: @bg-col-light;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+textbox {
+    padding: 6px;
+    margin: 20px 0px 0px 20px;
+    text-color: @mauve;
+    background-color: @bg-col;
+}

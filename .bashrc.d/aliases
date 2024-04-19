@@ -1,0 +1,9 @@
+# .bashrc
+
+alias ll='ls -l --human-readable --group-directories-first --time-style=long-iso'
+alias lld='ll -d */'
+alias df='duf'
+alias dmesg='sudo dmesg -xT'
+alias open='xdg-open'
+
+alias cd-temp='cd ~/temp'

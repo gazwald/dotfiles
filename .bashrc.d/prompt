@@ -1,0 +1,20 @@
+# .bashrc
+
+reset="\[$(tput sgr0)\]"
+
+mauve="\[$(tput setaf 183)\]"
+lavender="\[$(tput setaf 147)\]"
+green="\[$(tput setaf 151)\]"
+teal="\[$(tput setaf 116)\]"
+text="\[$(tput setaf 189)\]"
+
+OPEN_BRACKET="$green[$reset"
+CLOSED_BRACKET="$green]$reset"
+AT_SYMBOL="$green@$reset"
+
+TIME="$OPEN_BRACKET$lavender\t$reset$CLOSED_BRACKET"
+HOST_INFO="$OPEN_BRACKET$text\u$reset$AT_SYMBOL$text\h$reset$CLOSED_BRACKET"
+CURRENT_DIR="$OPEN_BRACKET$lavender\W$reset$CLOSED_BRACKET"
+DOLLAR="$green\\$ $reset"
+
+export PS1="$TIME$HOST_INFO$CURRENT_DIR$DOLLAR"

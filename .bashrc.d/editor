@@ -1,0 +1,16 @@
+# .bashrc
+
+if which nvim > /dev/null 2>&1; then
+  EDITOR=nvim
+  VISUAL=nvim
+  SYSTEMD_EDITOR=nvim
+  alias vim=nvim
+else
+  EDITOR=vim
+  VISUAL=vim
+  SYSTEMD_EDITOR=vim
+fi
+
+export EDITOR
+export VISUAL
+export SYSTEMD_EDITOR

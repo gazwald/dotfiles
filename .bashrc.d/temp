@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+TEMP_DIR="/tmp/${USERNAME}-temp"
+
+if [ ! -d "${TEMP_DIR}" ]; then
+  mkdir --mode=700 "${TEMP_DIR}"
+fi
+if [ ! -L "$HOME/temp" ]; then
+  ln -s "${TEMP_DIR}" "$HOME/temp"
+fi

@@ -1,0 +1,5 @@
+# .bashrc
+
+export HISTCONTROL=erasedups
+export HISTSIZE=5000
+export HISTTIMEFORMAT="%F %T "

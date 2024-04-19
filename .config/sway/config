@@ -1,0 +1,147 @@
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+
+smart_borders on
+default_border none
+hide_edge_borders vertical
+# floating_maximum_size 1920 x 1080
+# default_floating_border none
+
+### Variables
+set {
+    # Logo key. Use Mod1 for Alt.
+    $mod Mod4
+    $left h
+    $down j
+    $up k
+    $right l
+    $term kitty
+    $screenshot grim -g "$(slurp)" $(xdg-user-dir PICTURES)/Screenshots/$(date +'screenshot_%Y-%m-%d_%H-%M-%S.png')
+    $menu pkill rofi || rofi -show combi -combi-modes drun#run -modes combi
+
+    $output-laptop-buildin eDP-1
+    $output-laptop-dp-1 DP-1
+    $output-laptop-dp-2 DP-2
+    $output-desktop-gaming-hdmi HDMI-A-1
+
+    $monitor-laptop eDP-1
+    $monitor-dell-portrait "Dell Inc. DELL U2718Q H0YFH82E12FL"
+    $monitor-dell-landscape "Dell Inc. DELL U2718Q H0YFH83R0E8L"
+}
+
+### Output configuration
+#
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+output {
+    $monitor-dell-portrait   transform  90
+    $monitor-laptop          resolution 1920x1080@60.010Hz position 0        0
+    $monitor-dell-landscape  resolution 3840x2160@59.997Hz position 0        0
+    $monitor-dell-portrait   resolution 3840x2160@59.997Hz position 3840     0
+}
+focus output $monitor-dell-landscap
+
+# workspace {
+#     1 output $monitor-dell-landscape
+#     2 output $monitor-dell-portrait
+#     3 output $monitor-laptop
+#     4 output $monitor-laptop
+#     5 output $monitor-laptop
+#     6 output $monitor-laptop
+#     7 output $monitor-laptop
+#     8 output $monitor-laptop
+#     9 output $monitor-laptop
+#     0 output $monitor-laptop
+# }
+
+# xwayland: clicks ignored in negative coords
+# https://gitlab.freedesktop.org/xorg/xserver/issues/899
+# https://github.com/swaywm/wlroots/issues/958
+# output $monitor-laptop          resolution 1920x1080 position 0     0
+# output $monitor-dell-landscape  resolution 3840x2160 position -3840 -300
+# output $monitor-dell-portrait   resolution 3840x2160 position -6000 -1000
+
+
+# Toggle laptop screen when lid opened/closed
+# https://github.com/swaywm/sway/wiki#clamshell-mode
+bindswitch --reload --locked lid:on output $monitor-laptop disable
+bindswitch --reload --locked lid:off output $monitor-laptop enable
+
+### Idle configuration
+# exec swayidle -w -c ~/.config/swayidle/config
+
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+
+### Input configuration
+#
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+
+input "type:keyboard" {
+    xkb_layout us
+}
+
+# Disable touchpad bullshit
+input "type:touchpad" {
+    dwt enabled
+    dwtp enabled
+    middle_emulation enabled
+    tap disabled
+}
+
+# Enable laptop touchscreen
+input "type:touch" map_to_output $monitor-laptop
+
+#
+# Theme:
+#
+#
+include ~/.config/sway/themes/catppucin-mocha
+# target                 title     bg    text   indicator  border
+client.focused           $lavender $base $text  $rosewater $lavender
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
+
+#
+# Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
+# bar {
+#     position top
+#
+#     # When the status_command prints a new line to stdout, swaybar updates.
+#     # The default just shows the current date and time.
+#     status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
+#
+#     # colors {
+#     #     statusline #ffffff
+#     #     background #323232
+#     #     inactive_workspace #32323200 #32323200 #5c5c5c
+#     # }
+#     colors {
+#         background         $base
+#         statusline         $text
+#         focused_statusline $text
+#         active_workspace   $base $text $blue
+#         focused_separator  $base
+#         focused_workspace  $base $base $green
+#         active_workspace   $base $base $blue
+#         inactive_workspace $base $base $surface1
+#         urgent_workspace   $base $base $surface1
+#         binding_mode       $base $base $surface1
+#     }
+# }
+
+include /etc/sway/config.d/10-systemd-cgroups.conf
+include /etc/sway/config.d/10-systemd-session.conf
+include ~/.config/sway/config.d/*

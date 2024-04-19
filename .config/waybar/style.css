@@ -1,0 +1,104 @@
+@import "themes/mocha.css";
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: RobotoMono Nerd Font;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+window#waybar {
+  background-color: @mantle;
+  color: @yellow;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  border-bottom: solid 0px @surface1;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  color: @yellow;
+  border-radius: 5px;
+}
+
+#workspaces button.focused {
+  background-color: @yellow;
+  color: @mantle;
+  border-bottom: none;
+}
+
+#workspaces button.urgent {
+  background-color: @mauve;
+}
+
+widget > * {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.modules-left > widget > * {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.modules-left > widget:first-child > * {
+  margin-left: 6px;
+}
+
+.modules-left > widget:last-child > * {
+  margin-right: 18px;
+}
+
+.modules-right > widget > * {
+  padding: 0 12px;
+  margin-left: 0;
+  margin-right: 0;
+  color: @mantle;
+  background-color: @yellow;
+}
+
+.modules-right > widget:first-child > * {
+  border-radius: 5px 0 0 5px;
+}
+
+.modules-right > widget:last-child > * {
+  border-radius: 0 5px 5px 0;
+  margin-right: 6px;
+}
+
+#mode {
+  background: transparent;
+  color: @red;
+}
+
+@keyframes blink {
+  to {
+    color: @yellow;
+  }
+}
+
+#battery.critical:not(.charging) {
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+label:focus {
+  background-color: @mantle;
+}
+
+tooltip {
+  border-radius: 5px;
+  background: @overlay1;
+}
+
+tooltip label {
+  color: @yellow;
+}

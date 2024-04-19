@@ -1,0 +1,66 @@
+# This is Git's per-user configuration file.
+[core]
+  editor = nvim
+  excludesfile = ~/.config/git/globalignore
+  pager = delta
+
+[include]
+  path = ~/.config/git/work/config
+  path = ~/.config/git/home/config
+  path = ~/.config/delta/themes/catppuccin-mocha.gitconfig
+
+[blame]
+  pager = delta
+
+[interactive]
+  diffFilter = delta --color-only --features=interactive
+
+[delta]
+	features = Catppuccin-mocha
+  side-by-side = true
+  navigate = true
+  light = false
+  line-numbers = true
+  hyperlinks = false
+  true-color = always
+
+[delta "interactive"]
+    keep-plus-minus-markers = false
+
+[merge]
+  conflictstyle = diff3
+  tool = nvimdiff
+
+[pull]
+  rebase = true
+
+[rerere]
+  enabled = true
+
+[column]
+  ui = auto
+
+[branch]
+	sort = -committerdate
+
+[init]
+  defaultBranch = main
+
+[fetch]
+  prune = true
+
+[diff]
+  colorMoved = dimmed-zebra
+  colorMovedWS = allow-indentation-change
+
+[alias]
+  # File diff between upstream default
+  duff = "!sh ~/.local/bin/git-duff $1"
+  # Apply Shellcheck
+  shellac = "!sh ~/.local/bin/git-shellac $1"
+  # Modified Files
+  mf = "diff --name-only --relative"
+  # Staged Files
+  sf = "diff --name-only --relative --staged"
+  # Previous Commit Files
+  pcf = "diff-tree --name-only --relative --no-commit-id HEAD -r"

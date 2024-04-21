@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-TEMP_DIR="/tmp/$(whoami)-temp"
+TEMP_DIR="/tmp/${USER}-temp"
 
 if [ ! -d "${TEMP_DIR}" ]; then
   mkdir --mode=700 "${TEMP_DIR}"

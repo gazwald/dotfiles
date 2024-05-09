@@ -2,9 +2,10 @@
 --
 -- Setup language servers.
 local lspconfig = require('lspconfig')
-lspconfig.pyright.setup {}
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+lspconfig.pyright.setup { capabilities = capabilities }
 -- https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim
-lspconfig.gopls.setup {}
+lspconfig.gopls.setup { capabilities = capabilities }
 
 
 -- Global mappings.

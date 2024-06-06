@@ -14,10 +14,11 @@ hide_edge_borders vertical
 set {
     # Logo key. Use Mod1 for Alt.
     $mod Mod4
-    $left h
-    $down j
-    $up k
-    $right l
+    # TODO: Switch for QWERTY and Recurva
+    $down h
+    $up e
+    $left a
+    $right i
     $term kitty
     $screenshot grim -g "$(slurp)" $(xdg-user-dir PICTURES)/Screenshots/$(date +'screenshot_%Y-%m-%d_%H-%M-%S.png')
     $menu pkill rofi || rofi -show combi -combi-modes drun#run -modes combi

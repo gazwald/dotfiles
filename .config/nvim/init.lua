@@ -45,6 +45,8 @@ Plug('catppuccin/nvim', { ['as'] = 'catppuccin' })
 
 Plug('folke/trouble.nvim')
 
+Plug('tris203/precognition.nvim')
+
 vim.call('plug#end')
 
 require('settings')

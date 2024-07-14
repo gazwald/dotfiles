@@ -7,3 +7,5 @@ alias dmesg='sudo dmesg -xT'
 alias open='xdg-open'
 
 alias cd-temp='cd ~/temp'
+
+alias git-scracth='git status && git branch -D scratch; git checkout -b scratch'

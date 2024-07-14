@@ -1,0 +1,123 @@
+#!/usr/bin/env bash
+
+if [ ! -f /etc/yum.repos.d/mirror.repo ]; then
+  echo "Set up mirror.repo first"
+  exit 1
+fi
+
+golang=(
+  golang
+  golang-x-tools-gopls
+)
+
+javascript=(
+  nodejs
+  npm
+)
+
+python=(
+  poetry
+  python-pip
+)
+
+development=(
+  gcc-c++
+  git
+  git-delta
+  hadolint
+  neovim
+  nodejs-bash-language-server.noarch
+  shellcheck
+  strace
+  tig
+  "${golang[@]}"
+  "${javascript[@]}"
+  "${python[@]}"
+)
+
+docker=(
+  containerd.io
+  containerd.io
+  docker-buildx-plugin
+  docker-ce
+  docker-ce-cli
+  docker-compose-plugin
+)
+
+cli=(
+  NetworkManager-tui
+  bat
+  btop
+  dua-cli
+  duf
+  exif
+  fd-find
+  flatpak
+  fzf
+  htop
+  iftop
+  jq
+  lolcat
+  lsd
+  neofetch
+  nmap-ncat
+  no-more-secrets
+  powertop
+  ripgrep
+  stow
+)
+
+gui=(
+  acpi
+  blueman
+  easyeffects
+  flatseal
+  system-config-printer
+)
+
+misc=(
+  xdg-user-dirs
+  vim-default-editor
+)
+
+keyboard=(
+  chromium
+  gtk3
+  libusb
+  webkit2gtk3
+)
+
+audio=(
+  qpwgraph
+  jack-tools
+  jack-mixer
+  pipewire-plugin-jack
+)
+
+packages=(
+  "${cli[@]}"
+  "${development[@]}"
+  "${docker[@]}"
+  "${gui[@]}"
+  "${keyboard[@]}"
+  "${audio[@]}"
+  "${misc[@]}"
+)
+
+if ! grep 'deltarpm' /etc/dnf/dnf.conf; then
+  echo 'deltarpm=False' | sudo tee -a /etc/dnf/dnf.conf
+fi
+
+sudo dnf install -y distribution-gpg-keys
+sudo rpmkeys --import "/usr/share/distribution-gpg-keys/rpmfusion/RPM-GPG-KEY-rpmfusion-free-fedora-$(rpm -E %fedora)"
+sudo rpmkeys --import "/usr/share/distribution-gpg-keys/rpmfusion/RPM-GPG-KEY-rpmfusion-nonfree-fedora-$(rpm -E %fedora)"
+sudo dnf remove -y nano-default-editor.noarch
+
+sudo dnf install --refresh -y "${packages[@]}"
+
+sudo dnf groupupdate multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+sudo dnf swap ffmpeg-free ffmpeg --allowerasing
+sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
+sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
+sudo dnf swap mesa-va-drivers.i686 mesa-va-drivers-freeworld.i686
+sudo dnf swap mesa-vdpau-drivers.i686 mesa-vdpau-drivers-freeworld.i686

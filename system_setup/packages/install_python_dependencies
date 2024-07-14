@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+packages=(
+  black
+  isort
+  mypy
+  poetry
+  pylint
+  pyright
+  yamllint
+)
+
+pip install --user --upgrade "${packages[@]}"

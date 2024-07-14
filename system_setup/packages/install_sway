@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+if [ ! -f /etc/yum.repos.d/mirror.repo ]; then
+  echo "Set up mirror.repo first"
+  exit 1
+fi
+
+packages=(
+  gtk-murrine-engine
+  kitty
+  light
+  mako
+  pavucontrol
+  pipewire
+  qt5-qtwayland
+  qt6-qtwayland
+  rofi-wayland
+  sway-config-fedora
+  sway-systemd
+  swaybg
+  swayidle
+  swaylock
+  wdisplays
+  wev
+  wireplumber
+  wlogout
+)
+
+sudo dnf install --refresh -y "${packages[@]}"

@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+#
+# See: https://wiki.archlinux.org/title/gaming
+#
+
+if [ ! -f /etc/yum.repos.d/mirror.repo ]; then
+  echo "Set up mirror.repo first"
+  exit 1
+fi
+
+
+packages=(
+  corectrl
+  gamemode
+  gamescope
+  mangohud
+  openrgb
+  radeon-profile
+  radeon-profile-daemon
+  radeontop
+  steam
+  steam-devices
+  vulkan-tools
+)
+
+sudo dnf install --refresh -y "${packages[@]}"
+
+sudo tee /etc/polkit-1/rules.d/90-corectrl.rules << EOF
+polkit.addRule(function(action, subject) {
+    if ((action.id == "org.corectrl.helper.init" ||
+         action.id == "org.corectrl.helperkiller.init") &&
+        subject.local == true &&
+        subject.active == true &&
+        subject.isInGroup("user")) {
+            return polkit.Result.YES;
+    }
+});
+EOF
+
+sudo grubby --args=amdgpu.ppfeaturemask=0xffffffff --update-kernel=ALL

@@ -1,6 +1,11 @@
 # .bashrc
 
-alias ll='ls -l --human-readable --group-directories-first --time-style=long-iso'
+if [ "$OSTYPE" == "linux-gnu" ]; then
+  alias ll='ls -l --human-readable --group-directories-first --time-style=long-iso'
+else
+  alias ll='gls -l --human-readable --group-directories-first --time-style=long-iso'
+fi
+
 alias lld='ll -d */'
 alias df='duf'
 alias dmesg='sudo dmesg -xT'

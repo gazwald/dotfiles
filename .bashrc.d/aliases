@@ -1,11 +1,12 @@
 # .bashrc
 
-if [ "$OSTYPE" == "linux-gnu" ]; then
-  alias ll='ls -l --human-readable --group-directories-first --time-style=long-iso'
+if [[ "$OSTYPE" =~ "darwin" ]]; then
+  LS_CMD='gls'
 else
-  alias ll='gls -l --human-readable --group-directories-first --time-style=long-iso'
+  LS_CMD='ls'
 fi
 
+alias ll="$LS_CMD -l --human-readable --group-directories-first --time-style=long-iso"
 alias lld='ll -d */'
 alias df='duf'
 alias dmesg='sudo dmesg -xT'

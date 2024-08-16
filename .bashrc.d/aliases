@@ -6,7 +6,15 @@ else
   LS_CMD='ls'
 fi
 
-alias ll="$LS_CMD -l --human-readable --group-directories-first --time-style=long-iso"
+LS_OPTS=(
+  "-l"
+  "--color=always"
+  "--human-readable"
+  "--group-directories-first"
+  "--time-style=long-iso"
+)
+
+alias ll="$LS_CMD ${LS_OPTS[*]}"
 alias lld='ll -d */'
 alias df='duf'
 alias dmesg='sudo dmesg -xT'
@@ -14,4 +22,4 @@ alias open='xdg-open'
 
 alias cd-temp='cd ~/temp'
 
-alias git-scracth='git status && git branch -D scratch; git checkout -b scratch'
+alias git-scratch='git status && git branch -D scratch; git checkout -b scratch'

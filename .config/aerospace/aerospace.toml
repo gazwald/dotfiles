@@ -95,19 +95,19 @@ outer.right =      0
 cmd-f = 'fullscreen'
 
 cmd-s = 'layout v_accordion' # 'layout stacking' in i3
-cmd-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
+# cmd-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
 cmd-shift-space = 'layout floating tiling' # 'floating toggle' in i3
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-cmd-h = 'focus left'
-cmd-e = 'focus down'
-cmd-a = 'focus up'
+cmd-h = 'focus down'
+cmd-e = 'focus up'
+cmd-a = 'focus left'
 cmd-i = 'focus right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
-cmd-shift-h = 'move left'
-cmd-shift-e = 'move down'
-cmd-shift-a = 'move up'
+cmd-shift-h = 'move down'
+cmd-shift-e = 'move up'
+cmd-shift-a = 'move left'
 cmd-shift-i = 'move right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
@@ -154,7 +154,7 @@ r = ['flatten-workspace-tree', 'mode main'] # reset layout
 f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 
-cmd-shift-h = ['join-with left', 'mode main']
-cmd-shift-j = ['join-with down', 'mode main']
-cmd-shift-k = ['join-with up', 'mode main']
-cmd-shift-l = ['join-with right', 'mode main']
+cmd-shift-h = ['join-with down', 'mode main']
+cmd-shift-e = ['join-with up', 'mode main']
+cmd-shift-a = ['join-with left', 'mode main']
+cmd-shift-i = ['join-with right', 'mode main']

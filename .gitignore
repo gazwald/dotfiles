@@ -1,3 +1,13 @@
 .config/git/home
-.config/git/work
 .config/nvim/plugged
+.config/btop
+
+.local/bin
+.local/share/delta
+.local/share/nvim
+.local/share/karabiner
+.local/state
+
+# Work
+.config/git/work
+.bashrc.d/work

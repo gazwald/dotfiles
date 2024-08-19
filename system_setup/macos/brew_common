@@ -1,0 +1,46 @@
+# i3/swaywm compat
+brew install --cask nikitabobko/tap/aerospace
+aerospace
+brew tap FelixKratz/formulae
+sketchybar
+
+# Bash env
+bash
+coreutils # GNU userland tools (prefixed with 'g', eg 'gls')
+
+# GUI
+kitty
+spotify
+
+# CLI
+bat
+btop
+dua-cli
+duf
+fzf
+htop
+jq
+ripgrep
+shellcheck
+stow
+tig
+wget
+yq
+lsd
+
+# Development
+neovim
+tree-sitter
+gh
+git
+git-delta
+
+# Python
+black
+pyright
+isort
+mypy
+poetry
+python@3.10
+python@3.11
+python@3.12

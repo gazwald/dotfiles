@@ -1,4 +1,5 @@
 require('options/treesitter')
+require('options/telescope')
 require('options/lsp')
 require('options/cmp')
 require('options/colorizer')

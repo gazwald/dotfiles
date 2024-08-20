@@ -6,10 +6,10 @@ vim.keymap.set("n", "<Leader>d", ":bdelete<cr>", { desc = "" })
 
 vim.keymap.set("n", "<C-l>", ":nohl<CR><C-l>", { desc = "Clear search" })
 
-vim.keymap.set("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>")
-vim.keymap.set("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>")
-vim.keymap.set("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>")
-vim.keymap.set("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>")
+vim.keymap.set("n", "<leader>ff", function() require('telescope.builtin').find_files() end)
+vim.keymap.set("n", "<leader>fg", function() require('telescope.builtin').live_grep() end)
+vim.keymap.set("n", "<leader>fb", function() require('telescope.builtin').buffers() end)
+vim.keymap.set("n", "<leader>fh", function() require('telescope.builtin').help_tags() end)
 
 vim.keymap.set("n", "<leader>xx", function() require("trouble").toggle() end)
 vim.keymap.set("n", "<leader>xw", function() require("trouble").toggle("workspace_diagnostics") end)

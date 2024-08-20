@@ -11,6 +11,7 @@ coreutils # GNU userland tools (prefixed with 'g', eg 'gls')
 # GUI
 kitty
 spotify
+swift-quit # Actually close apps
 
 # CLI
 bat

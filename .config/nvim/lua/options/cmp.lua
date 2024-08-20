@@ -4,8 +4,8 @@ local cmp = require'cmp'
 cmp.setup({
   snippet = {
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-      -- vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
+      -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+      vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
     end,
   },
   mapping = cmp.mapping.preset.insert({

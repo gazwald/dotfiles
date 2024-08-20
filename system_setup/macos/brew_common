@@ -19,6 +19,7 @@ btop
 dua-cli
 duf
 fzf
+fd
 htop
 jq
 ripgrep
@@ -45,3 +46,8 @@ poetry
 python@3.10
 python@3.11
 python@3.12
+
+# Fonts
+font-dejavu-sans-mono-nerd-font
+font-droid-sans-mono-nerd-font
+font-hack-nerd-font

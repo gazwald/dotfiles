@@ -13,6 +13,14 @@ Bootstrapping a new system:
 sudo dnf install git stow
 ```
 
+### Mac
+
+- [Brew](https://brew.sh/)
+
+```zsh
+brew install git stow
+```
+
 ## Installation
 
 ```bash
@@ -24,7 +32,3 @@ git clone git@github.com:gazwald/dotfiles.git && cd dotfiles && stow .
 ```bash
 ~/dotfiles/system_setup/packages/install_common
 ```
-
-## Notes
-
-Cleaned up version of git@github.com:gazwald/home.git

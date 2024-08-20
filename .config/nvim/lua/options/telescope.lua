@@ -13,19 +13,19 @@ table.insert(vimgrep_arguments, "--glob")
 table.insert(vimgrep_arguments, "!**/.git/*")
 
 telescope.setup({
-	defaults = {
-		-- `hidden = true` is not supported in text grep commands.
-		vimgrep_arguments = vimgrep_arguments,
+  defaults = {
+    -- `hidden = true` is not supported in text grep commands.
+    vimgrep_arguments = vimgrep_arguments,
     -- Ignore files bigger than a threshold
     preview = {
         filesize_limit = 0.1, -- MB
     },
-	},
-	pickers = {
-		find_files = {
-			-- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
-			find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
-		},
-	},
+  },
+  pickers = {
+    find_files = {
+      -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+      find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+    },
+  },
 })
 telescope.load_extension('fzy_native')

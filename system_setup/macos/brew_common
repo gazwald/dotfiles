@@ -14,6 +14,7 @@ spotify
 swift-quit # Actually close apps
 
 # CLI
+tree
 bat
 btop
 dua-cli

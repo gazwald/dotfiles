@@ -6,7 +6,8 @@ require('options/colorizer')
 require('options/ale')
 require('options/fzf')
 require('options/golang')
+require('options/lualine')
 
 require('gitsigns').setup()
-require('lualine').setup { extensions = {'fzf', 'fugitive'} }
-require("bufferline").setup{}
+require("bufferline").setup({})
+require('trouble').setup({})

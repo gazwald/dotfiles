@@ -8,6 +8,8 @@ vim.keymap.set("n", "<C-l>", ":nohl<CR><C-l>", { desc = "Clear search" })
 
 vim.keymap.set("n", "<leader>ff", function() require('telescope.builtin').find_files() end)
 vim.keymap.set("n", "<leader>fg", function() require('telescope.builtin').live_grep() end)
+vim.keymap.set("n", "<leader>gs", function() require('telescope.builtin').git_status() end)
+vim.keymap.set("n", "<leader>fr", function() require('telescope.builtin').lsp_references() end)
 vim.keymap.set("n", "<leader>fb", function() require('telescope.builtin').buffers() end)
 vim.keymap.set("n", "<leader>fh", function() require('telescope.builtin').help_tags() end)
 

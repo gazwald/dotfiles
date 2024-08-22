@@ -2,12 +2,16 @@
 .config/nvim/plugged
 .config/btop
 .config/karabiner/automatic_backups
+.config/gtk-3.0/bookmarks
+.config/gtk-4.0/servers
 
 .local/bin
 .local/share/delta
 .local/share/nvim
 .local/share/karabiner
+.local/share/fonts/.uuid
 .local/state
+
 
 # Work
 .config/git/work

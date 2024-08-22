@@ -1,5 +1,3 @@
-vim.cmd("colorscheme catppuccin-mocha")
-
 vim.o.background = "dark"
 vim.o.number = true                     -- display line number
 vim.o.relativenumber = true             -- display relative line numbers

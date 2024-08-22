@@ -4,6 +4,8 @@ vim.keymap.set("n", "<Tab>", ":bnext<cr>", { desc = "" })
 vim.keymap.set("n", "<S-Tab>", ":bprevious<cr>", { desc = "" })
 vim.keymap.set("n", "<Leader>d", ":bdelete<cr>", { desc = "" })
 
+vim.keymap.set("n", "<Leader>gb", ":Git blame<cr>", { desc = "" })
+
 vim.keymap.set("n", "<C-l>", ":nohl<CR><C-l>", { desc = "Clear search" })
 
 vim.keymap.set("n", "<leader>ff", function() require('telescope.builtin').find_files() end)

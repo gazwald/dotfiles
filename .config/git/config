@@ -58,6 +58,8 @@
   duff = "!sh ~/.local/bin/git-duff $1"
   # Apply Shellcheck
   shellac = "!sh ~/.local/bin/git-shellac $1"
+  # Diff staged
+  ds = "diff --staged"
   # Modified Files
   mf = "diff --name-only --relative"
   # Staged Files

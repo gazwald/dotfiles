@@ -30,6 +30,7 @@ tig
 wget
 yq
 lsd
+postgresql@16
 
 # Development
 neovim

@@ -14,5 +14,9 @@ if [[ "$OSTYPE" =~ "darwin" ]]; then
         [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
       done
     fi
+
+    if [ -d "${HOMEBREW_PREFIX}/opt/postgresql@16/bin" ]; then
+      export PATH="$PATH:${HOMEBREW_PREFIX}/opt/postgresql@16/bin"
+    fi
   fi
 fi

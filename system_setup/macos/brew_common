@@ -6,6 +6,9 @@ brew tap FelixKratz/formulae
 sketchybar
 # Fix acceleration / floaty bs
 brew install --cask linearmouse
+# Terraform
+brew tap hashicorp/tap
+brew install hashicorp/tap/terraform
 
 # Bash env
 bash

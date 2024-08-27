@@ -7,7 +7,7 @@ lspconfig.pyright.setup { capabilities = capabilities }
 lspconfig.rust_analyzer.setup { capabilities = capabilities }
 -- https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim
 lspconfig.gopls.setup { capabilities = capabilities }
-
+lspconfig.terraformls.setup { capabilities = capabilities }
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -15,6 +15,11 @@ vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+		callback = function() vim.lsp.buf.format() end,
+		group = vim.api.nvim_create_augroup("lsp_document_format", {clear = true})
+	})
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer

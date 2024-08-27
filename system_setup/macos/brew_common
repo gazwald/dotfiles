@@ -1,8 +1,11 @@
 # i3/swaywm compat
 brew install --cask nikitabobko/tap/aerospace
 aerospace
+# Cleaner bar
 brew tap FelixKratz/formulae
 sketchybar
+# Fix acceleration / floaty bs
+brew install --cask linearmouse
 
 # Bash env
 bash
@@ -31,6 +34,8 @@ wget
 yq
 lsd
 postgresql@16
+gnu-sed
+gnu-tar
 
 # Development
 neovim

@@ -1,10 +1,20 @@
 #!/usr/bin/env bash
 
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+
+source "$PLUGIN_DIR/pallet.sh"
+
 # make sure it's executable with:
 # chmod +x ~/.config/sketchybar/plugins/aerospace.sh
 
 if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
-    /opt/homebrew/bin/sketchybar --set "$NAME" background.drawing=on
+    sketchybar \
+          --set "$NAME" \
+          background.drawing=on \
+          label.color=$TEAL
 else
-    /opt/homebrew/bin/sketchybar --set "$NAME" background.drawing=off
+    sketchybar \
+          --set "$NAME" \
+          background.drawing=off \
+          label.color=$SUBTEXT1
 fi

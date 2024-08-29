@@ -7,6 +7,7 @@
 
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
+source "$PLUGIN_DIR/pallet.sh"
 
 ##### Bar Appearance #####
 # Configuring the general appearance of the bar.
@@ -15,7 +16,15 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top height=40 blur_radius=30 color=0x40000000
+sketchybar --bar \
+    height=32 \
+    color=$CRUST \
+    margin=0 \
+    sticky=on \
+    padding_left=0 \
+    padding_right=0 \
+    notch_width=188 \
+    display=main
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -23,16 +32,17 @@ sketchybar --bar position=top height=40 blur_radius=30 color=0x40000000
 # https://felixkratz.github.io/SketchyBar/config/items
 
 default=(
-  padding_left=5
-  padding_right=5
+  background.height=32
+  icon.color=$MAUVE
   icon.font="Hack Nerd Font:Bold:17.0"
+  icon.padding_left=5
+  icon.padding_right=5
+  label.color=$SUBTEXT1
   label.font="Hack Nerd Font:Bold:14.0"
-  icon.color=0xffffffff
-  label.color=0xffffffff
-  icon.padding_left=4
-  icon.padding_right=4
   label.padding_left=4
   label.padding_right=4
+  padding_left=5
+  padding_right=5
 )
 
 sketchybar --default "${default[@]}"
@@ -70,10 +80,12 @@ for sid in $(aerospace list-workspaces --all); do
         --add item "space.$sid" left \
         --subscribe "space.$sid" aerospace_workspace_change \
         --set "space.$sid" \
-        background.color=0x44ffffff \
-        background.corner_radius=5 \
+        background.color=$SURFACE2 \
+        background.corner_radius=10 \
         background.height=20 \
         background.drawing=off \
+        label.padding_left=1 \
+        label.padding_right=12 \
         label="$sid" \
         click_script="aerospace workspace $sid" \
         script="$CONFIG_DIR/plugins/aerospace.sh $sid"
@@ -87,6 +99,7 @@ sketchybar --add item chevron left \
            --set chevron icon= label.drawing=off \
            --add item front_app left \
            --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
+           label.color=$GREEN \
            --subscribe front_app front_app_switched
 
 ##### Adding Right Items #####

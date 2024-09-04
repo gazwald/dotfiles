@@ -1,4 +1,5 @@
 .config/git/home
+.config/nvim/pack
 .config/nvim/plugged
 .config/btop
 .config/karabiner/automatic_backups

@@ -2,6 +2,7 @@
 
 if [[ "$OSTYPE" =~ "darwin" ]]; then
   LS_CMD='gls'
+  alias find='gfind'
 else
   LS_CMD='ls'
 fi

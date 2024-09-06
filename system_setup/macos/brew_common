@@ -39,6 +39,7 @@ lsd
 postgresql@16
 gnu-sed
 gnu-tar
+findutils # GNU find, locate, updatedb, xargs
 
 # Development
 neovim

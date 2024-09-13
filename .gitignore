@@ -12,6 +12,7 @@
 .local/share/karabiner
 .local/share/fonts/.uuid
 .local/state
+.local/opt
 
 
 # Work

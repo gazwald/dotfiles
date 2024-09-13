@@ -1,0 +1,12 @@
+
+# .bashrc
+
+TERRAFORM_RUNTIME="/usr/bin/terraform"
+if test -f $TERRAFORM_RUNTIME; then
+  complete -C $TERRAFORM_RUNTIME terraform
+fi
+
+if test -d .local/opt/google-cloud-sdk; then
+  source "$HOME/.local/opt/google-cloud-sdk/completion.bash.inc"
+  source "$HOME/.local/opt/google-cloud-sdk/path.bash.inc"
+fi

@@ -31,9 +31,4 @@ if [ -d ~/.bashrc.d/ ]; then
   done
 fi
 
-TERRAFORM_RUNTIME="/usr/bin/terraform"
-if test -f $TERRAFORM_RUNTIME; then
-  complete -C $TERRAFORM_RUNTIME terraform
-fi
-
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-"$HOME/.config"}

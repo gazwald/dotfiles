@@ -1,6 +1,7 @@
 {
   "modules-left": ["sway/workspaces", "sway/window", "sway/mode"],
   "modules-right": ["pulseaudio", "backlight", "network", "battery", "clock", "idle_inhibitor"],
+
   "idle_inhibitor": {
       "format": "{icon} ",
       "format-icons":{
@@ -53,6 +54,8 @@
     "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
     "max-length": 50
   },
+
+
   "sway/workspaces": {
     "disable-scroll": true
   }

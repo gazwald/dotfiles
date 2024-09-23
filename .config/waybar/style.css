@@ -9,8 +9,8 @@
 }
 
 window#waybar {
-  background-color: @mantle;
-  color: @yellow;
+  background-color: @crust;
+  color: @mauve;
   transition-property: background-color;
   transition-duration: 0.5s;
   border-bottom: solid 0px @surface1;
@@ -22,13 +22,13 @@ window#waybar.hidden {
 
 #workspaces button {
   padding: 0 5px;
-  color: @yellow;
+  color: @subtext1;
   border-radius: 5px;
 }
 
 #workspaces button.focused {
-  background-color: @yellow;
-  color: @mantle;
+  background-color: @teal;
+  color: @base;
   border-bottom: none;
 }
 
@@ -58,8 +58,7 @@ widget > * {
   padding: 0 12px;
   margin-left: 0;
   margin-right: 0;
-  color: @mantle;
-  background-color: @yellow;
+  color: @subtext1;
 }
 
 .modules-right > widget:first-child > * {
@@ -96,9 +95,13 @@ label:focus {
 
 tooltip {
   border-radius: 5px;
-  background: @overlay1;
+  background: @mantle;
 }
 
 tooltip label {
-  color: @yellow;
+  color: @mauve;
+}
+
+#window {
+  color: @green;
 }

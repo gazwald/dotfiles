@@ -47,6 +47,7 @@ tree-sitter
 gh
 git
 git-delta
+bash-language-server
 
 # Python
 black

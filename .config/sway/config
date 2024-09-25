@@ -6,7 +6,7 @@
 
 smart_borders on
 default_border none
-hide_edge_borders vertical
+# hide_edge_borders vertical
 # floating_maximum_size 1920 x 1080
 # default_floating_border none
 

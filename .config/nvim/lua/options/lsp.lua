@@ -9,6 +9,19 @@ lspconfig.rust_analyzer.setup({ capabilities = capabilities })
 lspconfig.gopls.setup({ capabilities = capabilities })
 lspconfig.terraformls.setup({ capabilities = capabilities })
 lspconfig.bashls.setup({ capabilities = capabilities })
+lspconfig.dockerls.setup({
+	capabilities = capabilities,
+	settings = {
+		docker = {
+			languageserver = {
+				formatter = {
+					ignoreMultilineInstructions = true,
+				},
+			},
+		},
+	},
+})
+lspconfig.docker_compose_language_service.setup({ capabilities = capabilities })
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions

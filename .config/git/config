@@ -54,10 +54,6 @@
   colorMovedWS = allow-indentation-change
 
 [alias]
-  # File diff between upstream default
-  duff = "!sh ~/.local/bin/git-duff $1"
-  # Apply Shellcheck
-  shellac = "!sh ~/.local/bin/git-shellac $1"
   # Diff staged
   ds = "diff --staged"
   # Modified Files

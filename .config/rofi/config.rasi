@@ -1,7 +1,9 @@
 configuration{
     modes: "run,drun,window";
     show-icons: true;
+    icon-theme: "Candy";
     terminal: "kitty";
+    font: "DejaVuSansM Nerd Font 14";
     drun-display-format: "{icon} {name}";
     disable-history: false;
     hide-scrollbar: true;

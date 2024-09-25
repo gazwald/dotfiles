@@ -1,6 +1,6 @@
 # General
-font=DejaVuSansM Nerd Font
-default-timeout=3000
+font=DejaVuSansM Nerd Font 14
+default-timeout=4000
 # output=eDP-1
 border-radius=10
 

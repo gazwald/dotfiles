@@ -26,7 +26,7 @@ development=(
   git-delta
   hadolint
   neovim
-  nodejs-bash-language-server.noarch
+  nodejs-bash-language-server
   shellcheck
   strace
   tig
@@ -36,7 +36,6 @@ development=(
 )
 
 docker=(
-  containerd.io
   containerd.io
   docker-buildx-plugin
   docker-ce

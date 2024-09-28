@@ -11,7 +11,7 @@ packages=(
   light
   mako
   pavucontrol
-  pipewire
+  #pipewire
   qt5-qtwayland
   qt6-qtwayland
   rofi-wayland
@@ -22,7 +22,7 @@ packages=(
   swaylock
   wdisplays
   wev
-  wireplumber
+  #wireplumber
   wlogout
 )
 

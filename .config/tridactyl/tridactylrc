@@ -1,0 +1,8 @@
+" vim: set ft=vim:
+
+" https://github.com/tridactyl/tridactyl/issues/64#issuecomment-496913151
+bind / fillcmdline find
+bind ? fillcmdline find -?
+bind n findnext 1
+bind N findnext -1
+bind ,<Space> nohlsearch

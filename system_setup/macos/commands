@@ -2,3 +2,6 @@
 # Move windows by dragging any part of the window
 # https://github.com/nikitabobko/AeroSpace/blob/b95c13e608be098213f56290d40b5e6419b2fc9d/docs/goodness.adoc#move-windows-by-dragging-any-part-of-the-window
 defaults write -g NSWindowShouldDragOnGesture -bool true
+
+# Disable window animations
+defaults write -g NSAutomaticWindowAnimationsEnabled -bool false

@@ -10,6 +10,10 @@ brew install --cask linearmouse
 brew tap hashicorp/tap
 brew install hashicorp/tap/terraform
 
+# https://github.com/FelixKratz/JankyBorders
+brew tap FelixKratz/formulae
+brew install borders
+
 # Bash env
 bash
 coreutils # GNU userland tools (prefixed with 'g', eg 'gls')

@@ -1,18 +1,19 @@
-.config/git/home
-.config/nvim/pack
-.config/nvim/plugged
 .config/btop
-.config/karabiner/automatic_backups
+.config/git/home
 .config/gtk-3.0/bookmarks
 .config/gtk-4.0/servers
+.config/karabiner/automatic_backups
+.config/nvim/pack
+.config/nvim/plugged
 
 .local/bin
-.local/share/delta
-.local/share/nvim
-.local/share/karabiner
-.local/share/fonts/.uuid
-.local/state
 .local/opt
+.local/pipx
+.local/share/delta
+.local/share/fonts/.uuid
+.local/share/karabiner
+.local/share/nvim
+.local/state
 
 
 # Work

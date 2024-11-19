@@ -41,7 +41,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 0
+accordion-padding = 10
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -49,7 +49,7 @@ default-root-container-layout = 'tiles'
 # Possible values: horizontal|vertical|auto
 # 'auto' means: wide monitor (anything wider than high) gets horizontal orientation,
 #               tall monitor (anything higher than wide) gets vertical orientation
-default-root-container-orientation = 'auto'
+default-root-container-orientation = 'vertical'
 
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -122,8 +122,10 @@ outer.right =      0
 
 cmd-f = 'fullscreen'
 
-cmd-s = 'layout v_accordion' # 'layout stacking' in i3
-cmd-t = 'layout h_accordion' # 'layout tabbed' in i3
+cmd-s = 'layout tiles horizontal vertical'
+cmd-t = 'layout accordion horizontal'
+cmd-shift-s = 'layout tiles horizontal vertical'
+cmd-shift-t = 'layout accordion horizontal'
 
 # cmd-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
 cmd-space = 'layout floating tiling' # 'floating toggle' in i3

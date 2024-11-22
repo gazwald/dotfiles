@@ -9,7 +9,7 @@ require("options/golang")
 require("options/lualine")
 
 require("gitsigns").setup()
-require("trouble").setup({})
+require("trouble").setup()
 
 require("catppuccin").setup({
 	flavour = "mocha", -- latte, frappe, macchiato, mocha

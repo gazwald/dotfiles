@@ -1,0 +1,9 @@
+mysqlclient
+ brew install mysql-client
+ export MYSQLCLIENT_LDFLAGS="-L/opt/homebrew/opt/mysql-client/lib"
+ export MYSQLCLIENT_CFLAGS="-I/opt/homebrew/opt/mysql-client/include/mysql"
+
+
+pymssql
+  brew install freetds
+  export LDFLAGS="-L/opt/homebrew/opt/openssl/lib"

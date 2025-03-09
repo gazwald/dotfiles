@@ -1,4 +1,4 @@
-# .bashrc
+# vim:ft=bash
 
 reset="\[$(tput sgr0)\]"
 

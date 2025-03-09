@@ -1,0 +1,4 @@
+# vim:ft=bash
+
+export KUBE_EDITOR=nvim
+export KUBECONFIG=~/.config/kube/config

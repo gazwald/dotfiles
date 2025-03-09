@@ -1,5 +1,4 @@
-
-# .bashrc
+# vim:ft=bash
 
 TERRAFORM_RUNTIME="/usr/bin/terraform"
 if test -f $TERRAFORM_RUNTIME; then

@@ -1,4 +1,4 @@
-# .bashrc
+# vim:ft=bash
 
 export HISTCONTROL=erasedups
 export HISTSIZE=5000

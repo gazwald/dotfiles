@@ -1,6 +1,5 @@
-# .bashrc
-#
-#
+# vim:ft=bash
+
 if [[ "$OSTYPE" =~ "darwin" ]]; then
   # https://docs.brew.sh/Shell-Completion
   if type brew &>/dev/null; then

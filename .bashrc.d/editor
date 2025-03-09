@@ -1,4 +1,4 @@
-# .bashrc
+# vim:ft=bash
 
 if which nvim > /dev/null 2>&1; then
   EDITOR=nvim

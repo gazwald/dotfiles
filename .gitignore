@@ -15,6 +15,7 @@
 .local/share/nvim
 .local/state
 
+.aws/credentials
 
 # Work
 .config/git/work

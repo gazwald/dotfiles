@@ -1,5 +1,11 @@
 # vim:ft=bash
 
+# https://sw.kovidgoyal.net/kitty/shell-integration/#manual-shell-integration
+if test -n "$KITTY_INSTALLATION_DIR"; then
+    export KITTY_SHELL_INTEGRATION="enabled"
+    source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"
+fi
+
 TERRAFORM_RUNTIME="/usr/bin/terraform"
 if test -f $TERRAFORM_RUNTIME; then
   complete -C $TERRAFORM_RUNTIME terraform

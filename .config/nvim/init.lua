@@ -44,6 +44,8 @@ Plug("catppuccin/nvim", { ["as"] = "catppuccin" })
 
 Plug("folke/trouble.nvim")
 
+Plug("MeanderingProgrammer/render-markdown.nvim")
+
 -- Plug('tris203/precognition.nvim')
 
 vim.call("plug#end")

@@ -9,6 +9,7 @@ lspconfig.rust_analyzer.setup({ capabilities = capabilities })
 lspconfig.gopls.setup({ capabilities = capabilities })
 lspconfig.terraformls.setup({ capabilities = capabilities })
 lspconfig.bashls.setup({ capabilities = capabilities })
+lspconfig.vale_ls.setup({ capabilities = capabilities })
 lspconfig.dockerls.setup({
 	capabilities = capabilities,
 	settings = {

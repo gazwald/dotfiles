@@ -1,0 +1,9 @@
+# Expressions don't expand in single quotes, use double quotes for that.
+# https://github.com/koalaman/shellcheck/wiki/SC2016
+disable=SC2016
+
+# Turn on warnings for unassigned uppercase variables
+enable=check-unassigned-uppercase
+
+# Require [[ and warn about [ in Bash/Ksh
+enable=require-double-brackets

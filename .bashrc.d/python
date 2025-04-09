@@ -1,4 +1,5 @@
 # vim:ft=bash
+# shellcheck source=/dev/null
 
 # Stop poetry from prompting for a password
 export PYTHON_KEYRING_BACKEND=keyring.backends.fail.Keyring
@@ -11,15 +12,17 @@ function python-venv {
 }
 
 function activate {
-  if test -f poetry.lock; then
+  if test -f .venv/bin/activate; then
+    source .venv/bin/activate
+  elif test -f venv/bin/activate; then
+    source venv/bin/activate
+  elif test -f poetry.lock; then
     if ! which -s poetry; then
       echo '`poetry` not found'
     else
       path=$(poetry env activate | awk '{print $2}')
       source "$path"
     fi
-  elif test -f .venv/bin/activate; then
-    source .venv/bin/activate
   else
     echo "I don't know what you want me to activate..."
   fi

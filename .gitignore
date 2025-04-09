@@ -5,6 +5,7 @@
 .config/karabiner/automatic_backups
 .config/nvim/pack
 .config/nvim/plugged
+.config/nvim/spell/*.spl
 
 .local/bin
 .local/opt
@@ -13,6 +14,8 @@
 .local/share/fonts/.uuid
 .local/share/karabiner
 .local/share/nvim
+.local/share/tig
+.local/share/vale
 .local/state
 
 .aws/credentials

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -exou pipefail
+
+curl --fail \
+     --location \
+     --create-dirs \
+     --output "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim \
+     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

@@ -14,7 +14,6 @@ default_border none
 set {
     # Logo key. Use Mod1 for Alt.
     $mod Mod4
-    # TODO: Switch for QWERTY and Recurva
     $down h
     $up e
     $left a
@@ -22,6 +21,7 @@ set {
     $term kitty
     $screenshot grim -g "$(slurp)" $(xdg-user-dir PICTURES)/Screenshots/$(date +'screenshot_%Y-%m-%d_%H-%M-%S.png')
     $menu pkill rofi || rofi -show combi -combi-modes drun#run -modes combi
+    $filemanager pcmanfm
 
     $output-laptop-buildin eDP-1
     $output-laptop-dp-1 DP-1

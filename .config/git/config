@@ -16,7 +16,7 @@
   diffFilter = delta --color-only --features=interactive
 
 [delta]
-	features = Catppuccin-mocha
+  features = Catppuccin-mocha
   side-by-side = true
   navigate = true
   light = false

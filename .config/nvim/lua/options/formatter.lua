@@ -33,7 +33,23 @@ require("formatter").setup({
 			require("formatter.filetypes.html").prettier,
 		},
 		markdown = {
-			require("formatter.filetypes.markdown").prettier,
+			function()
+				return {
+					exe = "prettier",
+					args = {
+						"--stdin-filepath",
+						"--print-width",
+						"120",
+						"--prose-wrap",
+						"always",
+						util.escape_path(util.get_current_buffer_file_path()),
+						"--parser",
+						"markdown",
+					},
+					stdin = true,
+					try_node_modules = true,
+				}
+			end,
 		},
 
 		-- Use the special "*" filetype for defining formatter configurations on

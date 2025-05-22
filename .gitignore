@@ -14,6 +14,8 @@
 .local/share/fonts/.uuid
 .local/share/karabiner
 .local/share/nvim
+.local/share/powershell/
+.local/share/recently-used.xbel
 .local/share/tig
 .local/share/vale
 .local/state

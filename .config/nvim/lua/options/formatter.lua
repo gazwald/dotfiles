@@ -17,20 +17,18 @@ require("formatter").setup({
 			require("formatter.filetypes.lua").stylua,
 		},
 		python = {
-			require("formatter.filetypes.python").black,
+			-- require("formatter.filetypes.python").black,
+			require("formatter.filetypes.python").ruff,
 			require("formatter.filetypes.python").isort,
 		},
 		terraform = {
 			require("formatter.filetypes.terraform").terraformfmt,
 		},
 		json = {
-			require("formatter.filetypes.json").prettier,
+			require("formatter.filetypes.json").jq,
 		},
 		yaml = {
-			require("formatter.filetypes.yaml").prettier,
-		},
-		html = {
-			require("formatter.filetypes.html").prettier,
+			require("formatter.filetypes.yaml").yamllint,
 		},
 		markdown = {
 			function()

@@ -52,10 +52,12 @@ gh
 git
 git-delta
 bash-language-server
+yamllint
 
 # Python
 black
 pyright
+ruff
 isort
 mypy
 poetry

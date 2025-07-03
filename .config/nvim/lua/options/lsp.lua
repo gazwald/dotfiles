@@ -1,17 +1,16 @@
 -- TODO Look at Mason: https://github.com/williamboman/mason.nvim
 --
 -- Setup language servers.
-local lspconfig = require("lspconfig")
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-lspconfig.pyright.setup({ capabilities = capabilities })
-lspconfig.rust_analyzer.setup({ capabilities = capabilities })
--- https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim
-lspconfig.gopls.setup({ capabilities = capabilities })
-lspconfig.terraformls.setup({ capabilities = capabilities })
-lspconfig.bashls.setup({ capabilities = capabilities })
-lspconfig.vale_ls.setup({ capabilities = capabilities })
-lspconfig.dockerls.setup({
-	capabilities = capabilities,
+vim.lsp.enable({ "pyright", "ruff", "rust_analyzer", "gopls", "terraformls", "bashls", "vale_ls", "dockerls", "docker_compose_language_service" })
+vim.lsp.config("pyright", {
+	settings = {
+		pyright = {
+			-- Using Ruff's import organizer
+			disableOrganizeImports = true,
+		},
+	},
+})
+vim.lsp.config("dockerls", {
 	settings = {
 		docker = {
 			languageserver = {
@@ -22,7 +21,6 @@ lspconfig.dockerls.setup({
 		},
 	},
 })
-lspconfig.docker_compose_language_service.setup({ capabilities = capabilities })
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions

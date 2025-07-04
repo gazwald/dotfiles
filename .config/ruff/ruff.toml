@@ -1,0 +1,4 @@
+[lint]
+ignore = [
+  "E731"    # lambda-assignment (def is brilliant, but I like lambda)
+]

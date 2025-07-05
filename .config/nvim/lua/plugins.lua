@@ -10,7 +10,7 @@ require("options/lualine")
 
 require("gitsigns").setup()
 require("trouble").setup()
-require("render-markdown").setup()
+-- require("render-markdown").setup()
 
 require("catppuccin").setup({
 	flavour = "mocha", -- latte, frappe, macchiato, mocha

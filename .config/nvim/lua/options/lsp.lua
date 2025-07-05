@@ -1,7 +1,7 @@
 -- TODO Look at Mason: https://github.com/williamboman/mason.nvim
 --
 -- Setup language servers.
-vim.lsp.enable({ "pyright", "ruff", "rust_analyzer", "gopls", "terraformls", "bashls", "vale_ls", "dockerls", "docker_compose_language_service" })
+vim.lsp.enable({ "pyright", "ruff", "rust_analyzer", "gopls" })
 vim.lsp.config("pyright", {
 	settings = {
 		pyright = {
@@ -10,17 +10,17 @@ vim.lsp.config("pyright", {
 		},
 	},
 })
-vim.lsp.config("dockerls", {
-	settings = {
-		docker = {
-			languageserver = {
-				formatter = {
-					ignoreMultilineInstructions = true,
-				},
-			},
-		},
-	},
-})
+-- vim.lsp.config("dockerls", {
+-- 	settings = {
+-- 		docker = {
+-- 			languageserver = {
+-- 				formatter = {
+-- 					ignoreMultilineInstructions = true,
+-- 				},
+-- 			},
+-- 		},
+-- 	},
+-- })
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions

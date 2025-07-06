@@ -19,7 +19,7 @@ set {
     $left a
     $right i
     $term kitty
-    $screenshot grim -g "$(slurp)" $(xdg-user-dir PICTURES)/Screenshots/$(date +'screenshot_%Y-%m-%d_%H-%M-%S.png')
+    $screenshot grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +'screenshot_%Y-%m-%d_%H-%M-%S.png')
     $menu pkill rofi || rofi -show combi -combi-modes drun#run -modes combi
     $filemanager pcmanfm
 
@@ -41,17 +41,20 @@ set {
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 output $monitor-laptop {
-  resolution  1920x1080@60.010Hz
-  position    0 0
+  resolution        1920x1080@60.010Hz
+  position          0 0
+  allow_tearing     yes
 }
 output $monitor-dell-widescreen {
   resolution        5120x2160@120.000Hz
   position          0 0
   adaptive_sync     on
+  allow_tearing     yes
   render_bit_depth  10
 }
 
-focus output $monitor-dell-landscape
+focus output $monitor-laptop
+focus output $monitor-dell-widescreen
 
 # workspace {
 #     1 output $monitor-dell-landscape
@@ -76,7 +79,7 @@ focus output $monitor-dell-landscape
 
 # Toggle laptop screen when lid opened/closed
 # https://github.com/swaywm/sway/wiki#clamshell-mode
-bindswitch --reload --locked lid:on output $monitor-laptop disable
+bindswitch --reload --locked lid:on  output $monitor-laptop disable
 bindswitch --reload --locked lid:off output $monitor-laptop enable
 
 ### Idle configuration

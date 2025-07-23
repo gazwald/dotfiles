@@ -51,7 +51,7 @@
 
 [diff]
   colorMoved = dimmed-zebra
-  colorMovedWS = allow-indentation-change
+  colorMovedWS = ignore-all-space
 
 [alias]
   # Diff staged

@@ -1,4 +1,13 @@
+fix = true
+line-length = 100
+
+[format]
+docstring-code-format = true
+
+
 [lint]
+# Enable `from __future__ import annotations` imports
+future-annotations = true
 ignore = [
   "E731"    # lambda-assignment (def is brilliant, but I like lambda)
 ]

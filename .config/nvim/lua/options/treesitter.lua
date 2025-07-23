@@ -7,6 +7,8 @@ require("nvim-treesitter.configs").setup({
 		"go",
 		"json",
 		"lua",
+		"markdown",
+		"markdown_inline",
 		"python",
 		"query",
 		"terraform",

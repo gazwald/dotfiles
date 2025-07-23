@@ -5,13 +5,10 @@ require("options/cmp")
 require("options/colorizer")
 require("options/formatter")
 require("options/fzf")
-require("options/golang")
 require("options/lualine")
 
 require("gitsigns").setup()
 require("trouble").setup()
--- require("render-markdown").setup()
-
 require("catppuccin").setup({
 	flavour = "mocha", -- latte, frappe, macchiato, mocha
 	integrations = {
@@ -22,3 +19,7 @@ require("catppuccin").setup({
 require("bufferline").setup({})
 
 vim.cmd("colorscheme catppuccin-mocha")
+
+-- require("options/golang")
+-- require("render-markdown").setup()
+-- require("options/avante")

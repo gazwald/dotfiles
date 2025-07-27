@@ -1,58 +1,76 @@
 -- vim: ts=2 sts=2 sw=2 et
 
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+	local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+	if vim.v.shell_error ~= 0 then
+		vim.api.nvim_echo({
+			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+			{ out, "WarningMsg" },
+			{ "\nPress any key to exit..." },
+		}, true, {})
+		vim.fn.getchar()
+		os.exit(1)
+	end
+end
+vim.opt.rtp:prepend(lazypath)
+
+-- Make sure to setup `mapleader` and `maplocalleader` before
+-- loading lazy.nvim so that mappings are correct.
+-- This is also a good place to setup other settings (vim.opt)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-local vim = vim
-local Plug = vim.fn["plug#"]
+-- Setup lazy.nvim
+require("lazy").setup({
+	spec = {
+		{
+			"catppuccin/nvim",
+			name = "catppuccin",
+			lazy = false,
+			priotity = 1000,
+			config = function()
+				vim.cmd("colorscheme catppuccin")
+			end,
+		},
 
-vim.call("plug#begin", "$HOME/.config/nvim/plugged")
+		"tpope/vim-fugitive",
+		"lewis6991/gitsigns.nvim",
 
--- Plug("preservim/nerdtree")
--- Plug("tiagofumo/vim-nerdtree-syntax-highlight")
+		{ "nvim-tree/nvim-web-devicons", lazy = true },
+		{
+			"nvim-telescope/telescope.nvim",
+			tag = "0.1.8",
+			dependencies = {
+				"nvim-lua/plenary.nvim",
+				"nvim-treesitter/nvim-treesitter",
+				"nvim-telescope/telescope-fzy-native.nvim",
+			},
+		},
+		{ "neovim/nvim-lspconfig", dependencies = {
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-cmdline",
+			"hrsh7th/nvim-cmp",
+		} },
 
-Plug("tpope/vim-fugitive")
-Plug("lewis6991/gitsigns.nvim")
+		"folke/trouble.nvim",
 
-Plug("nvim-lua/plenary.nvim")
-Plug("nvim-telescope/telescope.nvim", { ["tag"] = "0.1.8" })
-Plug("nvim-telescope/telescope-fzy-native.nvim")
+		"mhartington/formatter.nvim",
 
-Plug("neovim/nvim-lspconfig")
-Plug("hrsh7th/cmp-nvim-lsp")
-Plug("hrsh7th/cmp-buffer")
-Plug("hrsh7th/cmp-path")
-Plug("hrsh7th/cmp-cmdline")
-Plug("hrsh7th/nvim-cmp")
-
--- Plug("dense-analysis/ale")
-
-Plug("nvim-treesitter/nvim-treesitter", { ["do"] = ":TSUpdate" })
-Plug("neovim/nvim-lspconfig")
-Plug("mhartington/formatter.nvim")
-
--- Avante
--- Plug("MunifTanjim/nui.nvim")
--- Plug("MeanderingProgrammer/render-markdown.nvim")
--- Plug("yetone/avante.nvim", { ["tag"] = "v0.0.25", ["do"] = "make" })
-
--- Plug("ray-x/go.nvim")
-
-Plug("nvim-tree/nvim-web-devicons")
-Plug("akinsho/bufferline.nvim", { ["tag"] = "*" })
-
-Plug("norcalli/nvim-colorizer.lua")
-
-Plug("nvim-lualine/lualine.nvim")
-
-Plug("catppuccin/nvim", { ["as"] = "catppuccin" })
-
-Plug("folke/trouble.nvim")
-
-
--- Plug("tris203/precognition.nvim")
-
-vim.call("plug#end")
+		"akinsho/bufferline.nvim",
+		"nvim-lualine/lualine.nvim",
+		"norcalli/nvim-colorizer.lua",
+	},
+	-- Configure any other settings here. See the documentation for more details.
+	-- colorscheme that will be used when installing plugins.
+	install = { colorscheme = { "catppuccin" } },
+	-- automatically check for plugin updates
+	checker = { enabled = true },
+})
 
 require("settings")
 require("plugins")

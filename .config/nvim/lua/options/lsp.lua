@@ -5,7 +5,6 @@ vim.lsp.enable({ "ruff", "pyright" })
 vim.lsp.config("pyright", {
 	settings = {
 		pyright = {
-			typeCheckingMode = "strict",
 			deprecateTypingAliases = true,
 			enableReachabilityAnalysis = true,
 			disableOrganizeImports = true,

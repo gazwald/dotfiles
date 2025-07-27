@@ -1,3 +1,7 @@
+require("catppuccin").setup({
+	flavour = "mocha", -- latte, frappe, macchiato, mocha
+})
+
 require("options/treesitter")
 require("options/telescope")
 require("options/lsp")
@@ -9,16 +13,8 @@ require("options/lualine")
 
 require("gitsigns").setup()
 require("trouble").setup()
-require("catppuccin").setup({
-	flavour = "mocha", -- latte, frappe, macchiato, mocha
-	integrations = {
-		gitgutter = true,
-	},
-})
 
 require("bufferline").setup({})
-
-vim.cmd("colorscheme catppuccin-mocha")
 
 -- require("options/golang")
 -- require("render-markdown").setup()

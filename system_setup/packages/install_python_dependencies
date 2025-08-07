@@ -2,13 +2,11 @@
 set -eou pipefail
 
 packages=(
-  black
+  ty
+  ruff
   isort
-  mypy
-  poetry
-  pylint
-  pyright
   yamllint
+  poetry
 )
 
-pip install --user --upgrade "${packages[@]}"
+uv tool install "${packages[@]}"

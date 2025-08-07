@@ -17,8 +17,8 @@ javascript=(
 )
 
 python=(
-  poetry
   python-pip
+  uv
 )
 
 development=(
@@ -114,7 +114,7 @@ sudo dnf remove -y nano-default-editor.noarch
 
 echo "Installing packages."
 #sudo dnf install --refresh "${packages[@]}"
- 
+
 echo "Installing media packages."
 sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 sudo dnf swap ffmpeg-free ffmpeg --allowerasing

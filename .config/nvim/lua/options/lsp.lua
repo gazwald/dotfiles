@@ -1,13 +1,11 @@
 -- TODO Look at Mason: https://github.com/williamboman/mason.nvim
 --
 -- Setup language servers.
-vim.lsp.enable({ "ruff", "pyright" })
-vim.lsp.config("pyright", {
-	settings = {
-		pyright = {
-			deprecateTypingAliases = true,
-			enableReachabilityAnalysis = true,
-			disableOrganizeImports = true,
+vim.lsp.enable({ "ruff", "ty", "gopls" })
+vim.lsp.config("ruff", {
+	init_options = {
+		settings = {
+			lineLength = 100,
 		},
 	},
 })

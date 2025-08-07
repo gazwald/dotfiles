@@ -12,14 +12,11 @@ require("formatter").setup({
 		-- Formatter configurations for filetype "lua" go here
 		-- and will be executed in order
 		lua = {
-			-- "formatter.filetypes.lua" defines default configurations for the
-			-- "lua" filetype
 			require("formatter.filetypes.lua").stylua,
 		},
 		python = {
-			-- require("formatter.filetypes.python").black,
-			require("formatter.filetypes.python").ruff,
 			require("formatter.filetypes.python").isort,
+			require("formatter.filetypes.python").ruff,
 		},
 		terraform = {
 			require("formatter.filetypes.terraform").terraformfmt,
@@ -29,6 +26,9 @@ require("formatter").setup({
 		},
 		yaml = {
 			require("formatter.filetypes.yaml").yamllint,
+		},
+		go = {
+			require("formatter.filetypes.go").gofumpt,
 		},
 		markdown = {
 			function()

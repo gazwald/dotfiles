@@ -11,6 +11,11 @@ function python-venv {
   && echo "Created and activated .venv"
 }
 
+function mkpydir {
+  mkdir "$1" \
+  && touch "$1/__init__.py"
+}
+
 function activate {
   if test -f .venv/bin/activate; then
     source .venv/bin/activate

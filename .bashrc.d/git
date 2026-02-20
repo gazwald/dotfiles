@@ -1,0 +1,15 @@
+# vim:ft=bash
+
+function gee() {
+  GCLONE="$HOME/.local/bin/gclone"
+  if ! test -f "$GCLONE"; then
+    echo "$GCLONE does not exist"
+    exit 1
+  fi
+
+  REPO_PATH="$($GCLONE "$1")"
+  echo "$REPO_PATH"
+  if test -d "$REPO_PATH"; then
+    cd "$REPO_PATH" && git status
+  fi
+}

@@ -2,7 +2,7 @@
 
 * {
   border: none;
-  border-radius: 0;
+  border-radius: 5px;
   font-family: DejaVuSansM Nerd Font;
   font-size: 14px;
   font-weight: 500;
@@ -104,4 +104,13 @@ tooltip label {
 
 #window {
   color: @green;
+}
+
+.custom-spotify {
+    background-color: @crust;
+    color: @subtext1;
+}
+
+widget.pulseaudio > format-icon {
+  color: @pink;
 }

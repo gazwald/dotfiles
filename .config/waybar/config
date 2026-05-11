@@ -1,5 +1,6 @@
 {
   "modules-left": ["sway/workspaces", "sway/window", "sway/mode"],
+  "modules-center": ["custom/spotify", "custom/spotify-icon"],
   "modules-right": ["pulseaudio", "backlight", "network", "battery", "clock", "idle_inhibitor"],
 
   "idle_inhibitor": {
@@ -54,6 +55,20 @@
     "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
     "max-length": 50
   },
+
+
+  "custom/spotify": {
+      "exec": "/usr/bin/python3 /home/user/.local/bin/mediaplayer.py --player spotify",
+      "format": "{}",
+      "return-type": "json",
+      "on-click": "playerctl play-pause",
+      "on-scroll-up": "playerctl next",
+      "on-scroll-down": "playerctl previous"
+  },
+	"custom/spotify-icon": {
+		"format": "",
+		"tooltip": false
+	},
 
 
   "sway/workspaces": {

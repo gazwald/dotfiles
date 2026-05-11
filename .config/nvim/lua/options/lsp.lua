@@ -1,14 +1,7 @@
 -- TODO Look at Mason: https://github.com/williamboman/mason.nvim
 --
 -- Setup language servers.
-vim.lsp.enable({ "ruff", "ty", "gopls" })
-vim.lsp.config("ruff", {
-	init_options = {
-		settings = {
-			lineLength = 100,
-		},
-	},
-})
+vim.lsp.enable({ "pyright", "gopls" })
 -- vim.lsp.config("dockerls", {
 -- 	settings = {
 -- 		docker = {

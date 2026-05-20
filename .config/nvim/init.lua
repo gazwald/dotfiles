@@ -26,16 +26,7 @@ vim.g.maplocalleader = " "
 -- Setup lazy.nvim
 require("lazy").setup({
 	spec = {
-		{
-			"catppuccin/nvim",
-			name = "catppuccin",
-			lazy = false,
-			priotity = 1000,
-			config = function()
-				vim.cmd("colorscheme catppuccin")
-			end,
-		},
-
+		{ "catppuccin/nvim", name = "catppuccin", priority = 1000, auto_integrations = true },
 		"tpope/vim-fugitive",
 		"lewis6991/gitsigns.nvim",
 
@@ -70,10 +61,12 @@ require("lazy").setup({
 	},
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.
-	install = { colorscheme = { "catppuccin" } },
+	install = { colorscheme = { "catppuccin-mocha" } },
 	-- automatically check for plugin updates
 	checker = { enabled = true },
 })
+
+vim.cmd.colorscheme("catppuccin-nvim")
 
 require("settings")
 require("plugins")

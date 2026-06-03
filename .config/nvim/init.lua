@@ -1,72 +1,39 @@
 -- vim: ts=2 sts=2 sw=2 et
 
--- Bootstrap lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-	local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-	if vim.v.shell_error ~= 0 then
-		vim.api.nvim_echo({
-			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-			{ out, "WarningMsg" },
-			{ "\nPress any key to exit..." },
-		}, true, {})
-		vim.fn.getchar()
-		os.exit(1)
-	end
-end
-vim.opt.rtp:prepend(lazypath)
-
 -- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
 -- This is also a good place to setup other settings (vim.opt)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Setup lazy.nvim
-require("lazy").setup({
-	spec = {
-		{ "catppuccin/nvim", name = "catppuccin", priority = 1000, auto_integrations = true },
-		"tpope/vim-fugitive",
-		"lewis6991/gitsigns.nvim",
+local gh = function(x)
+	return "https://github.com/" .. x
+end
 
-		{ "nvim-tree/nvim-web-devicons", lazy = true },
-		{
-			"nvim-telescope/telescope.nvim",
-			tag = "0.1.8",
-			dependencies = {
-				"nvim-lua/plenary.nvim",
-				"nvim-treesitter/nvim-treesitter",
-				"nvim-telescope/telescope-fzy-native.nvim",
-			},
-		},
-		{
-			"neovim/nvim-lspconfig",
-			dependencies = {
-				"hrsh7th/cmp-nvim-lsp",
-				"hrsh7th/cmp-buffer",
-				"hrsh7th/cmp-path",
-				"hrsh7th/cmp-cmdline",
-				"hrsh7th/nvim-cmp",
-			},
-		},
-
-		"folke/trouble.nvim",
-
-		"mhartington/formatter.nvim",
-
-		"akinsho/bufferline.nvim",
-		"nvim-lualine/lualine.nvim",
-		"norcalli/nvim-colorizer.lua",
-	},
-	-- Configure any other settings here. See the documentation for more details.
-	-- colorscheme that will be used when installing plugins.
-	install = { colorscheme = { "catppuccin-mocha" } },
-	-- automatically check for plugin updates
-	checker = { enabled = true },
+vim.pack.add({
+	{ src = gh("catppuccin/nvim"), name = "catppuccin" },
+	{ src = gh("nvim-telescope/telescope.nvim"), version = "v0.2.1" },
+	gh("lewis6991/gitsigns.nvim"),
+	gh("tpope/vim-fugitive"),
+	gh("nvim-tree/nvim-web-devicons"),
+	gh("nvim-lua/plenary.nvim"),
+	gh("nvim-telescope/telescope-fzy-native.nvim"),
+	gh("neovim/nvim-lspconfig"),
+	gh("hrsh7th/cmp-nvim-lsp"),
+	gh("hrsh7th/cmp-buffer"),
+	gh("hrsh7th/cmp-path"),
+	gh("hrsh7th/cmp-cmdline"),
+	gh("hrsh7th/nvim-cmp"),
+	gh("hrsh7th/cmp-vsnip"),
+	gh("hrsh7th/vim-vsnip"),
+	gh("folke/trouble.nvim.git"),
+	gh("mhartington/formatter.nvim"),
+	gh("akinsho/bufferline.nvim"),
+	gh("nvim-lualine/lualine.nvim"),
+	gh("norcalli/nvim-colorizer.lua"),
 })
 
-vim.cmd.colorscheme("catppuccin-nvim")
+vim.cmd.colorscheme("catppuccin")
 
 require("settings")
 require("plugins")
